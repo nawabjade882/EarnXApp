@@ -23,18 +23,28 @@ import { CONFIG } from '@/lib/config';
 import { CheckSquare, Film, X, ListTodo, Loader } from 'lucide-react';
 import { getPersonalizedTaskSuggestions } from '@/ai/flows/personalized-task-suggestions';
 
-function AdDisplay({ adKey }: { adKey: number }) {
+function AdDisplay() {
     useEffect(() => {
-        // This is the standard AdSense push code.
-        // It might throw a "TagError" in development environments like the Studio, which is expected.
-        // On a live website, this should work correctly.
-        try {
-            // @ts-ignore
-            (window.adsbygoogle = window.adsbygoogle || []).push({});
-        } catch (e) {
-            console.error("AdSense error (expected in dev environment):", e);
+        // We only run the ad script in production to avoid TagError in development.
+        if (process.env.NODE_ENV === 'production') {
+            try {
+                // @ts-ignore
+                (window.adsbygoogle = window.adsbygoogle || []).push({});
+            } catch (e) {
+                console.error("AdSense production error:", e);
+            }
         }
-    }, [adKey]);
+    }, []);
+
+    // In development, show a placeholder. In production, show the ad.
+    if (process.env.NODE_ENV !== 'production') {
+        return (
+            <div className="text-center p-4">
+                <p className="font-semibold">Ad Placeholder</p>
+                <p className="text-sm text-muted-foreground">(Ads will show on the live website)</p>
+            </div>
+        );
+    }
 
     return (
         <>
@@ -122,7 +132,7 @@ export function QuickActionsCard({ user, btcPrice, addReward, applyReferral, wit
   };
 
   const openAdDialog = () => {
-    setAdKey(Date.now());
+    setAdKey(Date.now()); // Change key to re-mount the component
     setIsAdPlayerOpen(true);
   }
 
