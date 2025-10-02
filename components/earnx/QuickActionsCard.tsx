@@ -38,27 +38,13 @@ function AdDisplay({ adKey }: { adKey: number }) {
 
     return (
         <>
-            {/* 
-              This is your AdSense ad unit.
-              It's ready for production. The placeholder below is just for the dev environment.
-            */}
-            <div className="hidden">
-                 <ins className="adsbygoogle"
-                     key={adKey} // The key helps React re-render the ad unit correctly
-                     style={{ display: 'block' }}
-                     data-ad-client="ca-pub-9158865747657748"
-                     data-ad-slot="2557350253"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-            </div>
-            {/* 
-              The placeholder below is shown to avoid breaking the layout in the dev environment 
-              if the ad fails to load. On your live site, the real ad will be displayed.
-            */}
-            <div className="flex flex-col items-center justify-center h-full bg-muted/30 rounded-lg p-4">
-              <p className="text-muted-foreground text-center">Ad placeholder</p>
-              <p className="text-xs text-muted-foreground/50 text-center mt-2">Ads will display here on the live website.</p>
-            </div>
+            {/* <!-- EarnX --> */}
+            <ins className="adsbygoogle"
+                 style={{ display: 'block' }}
+                 data-ad-client="ca-pub-9158865747657748"
+                 data-ad-slot="6954754415"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
         </>
     );
 }
