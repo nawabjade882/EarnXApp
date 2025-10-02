@@ -61,7 +61,7 @@ function Footer() {
                       <TelegramIcon />
                     </Button>
                 </Link>
-                <Link href="https://youtube.com/@example" target="_blank" rel="noopener noreferrer">
+                <Link href="https://www.youtube.com/channel/UCrYhoKp1Z1Ce6vxy8y1HHcw" target="_blank" rel="noopener noreferrer">
                     <Button variant="outline" size="icon">
                         <Youtube className="h-5 w-5" />
                     </Button>
