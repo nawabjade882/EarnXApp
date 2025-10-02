@@ -79,6 +79,11 @@ function Footer() {
                         <Youtube className="h-5 w-5" />
                     </Button>
                 </Link>
+                 <Link href="#" target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline" size="icon">
+                        <Instagram className="h-5 w-5" />
+                    </Button>
+                </Link>
                 <Link href="https://chat.whatsapp.com/LHzV2Ih7rKkIAsULxjB7PK?mode=ems_copy_t" target="_blank" rel="noopener noreferrer">
                     <Button variant="outline" size="icon">
                         <WhatsAppIcon />
