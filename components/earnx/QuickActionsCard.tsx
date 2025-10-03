@@ -23,39 +23,28 @@ import { CONFIG } from '@/lib/config';
 import { CheckSquare, Film, X, ListTodo, Loader } from 'lucide-react';
 import { getPersonalizedTaskSuggestions } from '@/ai/flows/personalized-task-suggestions';
 
-function AdDisplay() {
+function AdDisplay({ adKey }: { adKey: number }) {
     useEffect(() => {
-        // We only run the ad script in production to avoid TagError in development.
-        if (process.env.NODE_ENV === 'production') {
-            try {
-                // @ts-ignore
-                (window.adsbygoogle = window.adsbygoogle || []).push({});
-            } catch (e) {
-                console.error("AdSense production error:", e);
-            }
+        try {
+            // @ts-ignore
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+        } catch (e) {
+            console.error("AdSense Error:", e);
         }
-    }, []);
-
-    // In development, show a placeholder. In production, show the ad.
-    if (process.env.NODE_ENV !== 'production') {
-        return (
-            <div className="text-center p-4">
-                <p className="font-semibold">Ad Placeholder</p>
-                <p className="text-sm text-muted-foreground">(Ads will show on the live website)</p>
-            </div>
-        );
-    }
+    }, [adKey]);
 
     return (
-        <>
-            {/* <!-- EarnX --> */}
-            <ins className="adsbygoogle"
-                 style={{ display: 'block' }}
-                 data-ad-client="ca-pub-9158865747657748"
-                 data-ad-slot="6954754415"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-        </>
+        <div className="w-full h-full flex items-center justify-center bg-black/80">
+            <ins 
+                key={adKey}
+                className="adsbygoogle"
+                style={{ display: 'block', width: '100%', height: '100%' }}
+                data-ad-client="ca-pub-9158865747657748"
+                data-ad-slot="6954754415"
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+            ></ins>
+        </div>
     );
 }
 
@@ -242,7 +231,7 @@ export function QuickActionsCard({ user, btcPrice, addReward, applyReferral, wit
             </DialogHeader>
 
             <div className="flex-grow flex items-center justify-center text-muted-foreground bg-black/50">
-               {isAdPlayerOpen && <AdDisplay key={adKey} />}
+               {isAdPlayerOpen && <AdDisplay adKey={adKey} />}
             </div>
              
              <div className="p-4 border-t">
