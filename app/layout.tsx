@@ -20,6 +20,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9158865747657748" crossOrigin="anonymous"></script>
+        <script async src="https://www.revenuecpmgate.com/segmhentbt?key=cd853fc81f6a617041e74d31d6230d69" crossOrigin="anonymous"></script>
       </head>
       <body className="font-body antialiased">
         {children}
