@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ArrowRight, History, VideoIcon } from 'lucide-react';
+import { ArrowRight, History, PenSquare } from 'lucide-react';
 import Link from 'next/link';
 
 const ADMIN_EMAIL = 'yusufytsiddiqui@gmail.com';
@@ -107,14 +107,14 @@ function AdminDashboardPage() {
                     </CardContent>
                 </Card>
             </Link>
-             <Link href="/video-generator" passHref>
+             <Link href="/ad-script-generator" passHref>
                 <Card className="card shadow-lg hover:border-primary transition-colors cursor-pointer h-full">
                     <CardHeader>
                         <CardTitle className="flex items-center gap-3">
-                            <VideoIcon className="h-6 w-6" />
-                            AI Video Generator
+                            <PenSquare className="h-6 w-6" />
+                            AI Ad Script Generator
                         </CardTitle>
-                        <CardDescription>Create promotional videos for the app using AI.</CardDescription>
+                        <CardDescription>Create promotional ad scripts for the app using AI.</CardDescription>
                     </CardHeader>
                     <CardContent>
                          <div className="flex justify-end">
